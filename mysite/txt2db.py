@@ -21,7 +21,8 @@ def main():
     f = open('oldblog.txt')
     for line in f:
         title,content = line.split('****')
-        Blog.objects.create(title=title,content=content)
+       # Blog.objects.create(title=title,content=content)
+        Blog.objects.get_or_create(title=title,content=content)
     f.close()
  
 if __name__ == "__main__":
